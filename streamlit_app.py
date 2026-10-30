@@ -9,7 +9,7 @@
 import streamlit as st
 import altair as alt
  
-st.title('My First Streamlit App')
+st.title('Streamlit App for IS445: ID5293')
 
 st.text("The URL for this app is: https://jnaiman-is445-demo.streamlit.app/")
 st.text("The URL for its GitHub repo is: https://github.com/jnaiman/is445_streamlit_demo")
@@ -33,7 +33,7 @@ points = (
     alt.Chart()
     .mark_point()
     .encode(
-        alt.X("monthdate(date):T", title="Date"),
+        alt.X("monthdate(date):T", title="Date (Month Year)"),
         alt.Y(
             "temp_max:Q",
             title="Maximum Daily Temperature (C)",
@@ -63,7 +63,7 @@ bars = (
     .add_params(click)
 )
 
-chart = alt.vconcat(points, bars, data=source, title="Seattle Weather: 2012-2015")
+chart = alt.vconcat(points, bars, data=source, title="Seattle Weather - 2001 to 2004")
 
 tab1, tab2 = st.tabs(["Streamlit theme (default)", "Altair native theme"])
 
